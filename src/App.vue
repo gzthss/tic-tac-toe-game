@@ -2,7 +2,7 @@
 
 import {ref,computed} from 'vue'
 
-const player = ref('x')
+const player = ref('X')
 const board = ref([
   ['','',''],
   ['','',''],
@@ -39,7 +39,7 @@ const makeMove = (x,y) => {
   if(board.value[x][y] !== '') return
 
   board.value[x][y] = player.value
-  player.value = player.value === 'x' ? 'O' : 'x'
+  player.value = player.value === 'X' ? 'O' : 'X'
 }
 
 const resetGame = ()=>{
@@ -48,7 +48,7 @@ const resetGame = ()=>{
     ['','',''],
     ['','','']
   ]
-  player.value = 'x'
+  player.value = 'X'
 }
 
 
@@ -68,8 +68,8 @@ const resetGame = ()=>{
           :key = "y" 
           @click="makeMove(x,y)" 
           :class="`border border-white w-20 h-20 hover:bg-gray-700 flex items-center
-          justify-center material-icons-outlined text-4xl cursor-pointer ${cell === 'x' ? 'text-pink-500' : 'text-blue-400'}`" >
-          {{cell === 'x' ? 'close' : cell === 'O' ? 'circle':''}}
+          justify-center material-icons-outlined text-4xl cursor-pointer ${cell === 'X' ? 'text-pink-500' : 'text-blue-400'}`" >
+          {{cell === 'X' ? 'close' : cell === 'O' ? 'circle':''}}
 
         </div>
       </div>
